@@ -347,6 +347,7 @@ import "boxicons";
     border: 2px solid #044560;
     cursor: pointer;
     border-radius: 3em;
+    display: none;
   }
   .scroll-down-btn::before {
     position: absolute;
@@ -390,7 +391,7 @@ import "boxicons";
     height: 100vh;
     max-width: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     flex-shrink: 0;
     background-image: url("../../assets/MobileCoverImage.png");
     display: flex;
@@ -403,7 +404,7 @@ import "boxicons";
     flex-direction: column;
     justify-content: center;
     margin-left: 0px;
-    margin-bottom: 130px;
+    margin-bottom: 50px;
   }
 
   .txt {
