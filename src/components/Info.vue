@@ -42,6 +42,29 @@
         </div>
       </div>
     </div>
+    <div class="congratulations">
+      <div class="congrats-title">Congratulations General Election 4</div>
+      <div class="next-girl">"NEXT GIRLS 36"</div>
+      <div class="ge4-image">
+        <img class="ge4-image-1" src="../../assets/meenge4.jpg" alt="" />
+        <img class="ge4-image-1" src="../../assets/meenge42.jpg" alt="" />
+      </div>
+      <div class="ge4-video-title">General Election4 Next Girls 33rd-40th</div>
+      <div class="sub-congrats-title">
+        วินาทีประกาศผลและ Speech ของน้องมีนในงาน BNK48 16th Single Senbatsu
+        General Election หรืองาน GE ครั้งที่ 4
+      </div>
+      <div class="video">
+        <iframe
+          class="ge4"
+          src="https://www.youtube.com/embed/mmdRIb_W_P4?si=qFd3Y42a1tb84H0j&amp;start=133"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <div class="video-recommended">
       <div class="video-title">Recommended Video</div>
       <div class="video-sub-title">
@@ -98,7 +121,7 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap");
 
 /* Desktop size */
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .info {
     display: flex;
     flex-direction: column;
@@ -265,11 +288,68 @@
     color: #044560;
     margin-right: 3px;
   }
+
+  .congratulations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 100px 0px;
+  }
+  .congrats-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 30px;
+    font-weight: 700;
+    color: #044560;
+  }
+
+  .next-girl {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffaaf2;
+    padding-bottom: 20px;
+  }
+
+  .sub-congrats-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 16px;
+    font-weight: 500;
+    color: #044560;
+    padding: 5px 0px 10px 0px;
+    width: 900px;
+    text-align: center;
+  }
+
+  .ge4-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ge4-image-1 {
+    width: 440px;
+    margin: 5px 10px 30px 10px;
+  }
+
+  .ge4 {
+    width: 900px;
+    height: 600px;
+  }
+
+  .ge4-video-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 22px;
+    font-weight: 700;
+    color: #044560;
+    padding: 20px 10px 0px 10px;
+  }
 }
 
 /* Ipad size */
 
-@media only screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .info {
     display: flex;
     flex-direction: column;
@@ -434,10 +514,67 @@
     color: #044560;
     margin-right: 3px;
   }
+
+  .congratulations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 100px 0px;
+  }
+  .congrats-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 30px;
+    font-weight: 700;
+    color: #044560;
+  }
+
+  .next-girl {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffaaf2;
+    padding-bottom: 20px;
+  }
+
+  .sub-congrats-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 14px;
+    font-weight: 500;
+    color: #044560;
+    padding: 5px 0px 10px 0px;
+    width: 700px;
+    text-align: center;
+  }
+
+  .ge4-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ge4-image-1 {
+    width: 330px;
+    margin: 5px 10px 30px 10px;
+  }
+
+  .ge4 {
+    width: 680px;
+    height: 400px;
+  }
+
+  .ge4-video-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 18px;
+    font-weight: 700;
+    color: #044560;
+    padding: 20px 10px 0px 10px;
+  }
 }
 
 /* mobile size */
-@media only screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .info {
     display: flex;
     flex-direction: column;
@@ -601,6 +738,63 @@
     font-weight: 500;
     color: #044560;
     margin-right: 3px;
+  }
+
+  .congratulations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 100px 0px;
+  }
+  .congrats-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 22px;
+    font-weight: 700;
+    color: #044560;
+  }
+
+  .next-girl {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffaaf2;
+    padding-bottom: 20px;
+  }
+
+  .sub-congrats-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 12px;
+    font-weight: 500;
+    color: #044560;
+    padding: 5px 0px 10px 0px;
+    width: 360px;
+    text-align: center;
+  }
+
+  .ge4-image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ge4-image-1 {
+    width: 175px;
+    margin: 5px 5px 30px 5px;
+  }
+
+  .ge4 {
+    width: 350px;
+    height: 200px;
+  }
+
+  .ge4-video-title {
+    font-family: "IBM Plex Sans Thai";
+    font-size: 16px;
+    font-weight: 700;
+    color: #044560;
+    padding: 20px 10px 0px 10px;
   }
 }
 </style>
