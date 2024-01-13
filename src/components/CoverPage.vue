@@ -403,7 +403,7 @@ import "boxicons";
     flex-direction: column;
     justify-content: center;
     margin-left: 0px;
-    margin-bottom: 32%;
+    margin-bottom: 130px;
   }
 
   .txt {
