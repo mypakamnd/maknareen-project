@@ -340,14 +340,13 @@ import "boxicons";
   .scroll-down-btn {
     position: absolute;
     left: 50%;
-    bottom: 8%;
+    bottom: 5%;
     transform: translateX(-50%);
     height: 50px;
     width: 30px;
     border: 2px solid #044560;
     cursor: pointer;
     border-radius: 3em;
-    display: none;
   }
   .scroll-down-btn::before {
     position: absolute;
@@ -404,7 +403,7 @@ import "boxicons";
     flex-direction: column;
     justify-content: center;
     margin-left: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   .txt {
