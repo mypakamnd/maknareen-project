@@ -92,6 +92,7 @@ onMounted(async () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
   }
   .event-name-and-btn {
     display: flex;
@@ -109,6 +110,7 @@ onMounted(async () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
   }
 
   .schedule-list {
@@ -217,6 +219,7 @@ onMounted(async () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
   }
   .event-name-and-btn {
     display: flex;
@@ -235,6 +238,7 @@ onMounted(async () => {
     justify-content: center;
     align-items: center;
     padding-top: 60px;
+    background-color: #ffffff;
   }
 
   .schedule-list {
@@ -343,6 +347,7 @@ onMounted(async () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
   }
   .event-name-and-btn {
     display: flex;
@@ -361,6 +366,7 @@ onMounted(async () => {
     justify-content: center;
     align-items: center;
     padding-top: 0px;
+    background-color: #ffffff;
   }
 
   .schedule-list {

@@ -403,6 +403,7 @@ import "boxicons";
     flex-direction: column;
     justify-content: center;
     margin-left: 0px;
+    margin-bottom: 32%;
   }
 
   .txt {
@@ -434,9 +435,6 @@ import "boxicons";
   .btn-group {
     display: flex;
     justify-content: center;
-    align-items: center;
-    /* display: none; */
-    margin-bottom: 130px;
   }
 
   .q-btn:before {

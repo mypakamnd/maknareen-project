@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section id="official-social-network">
+  <section id="official-social-network" class="official-social-network">
     <div class="social-network">
       <div class="social-network-title">Social Network</div>
       <div class="social-network-sub-title">
@@ -132,6 +132,9 @@
 </template>
 
 <style scoped>
+.official-social-network {
+  background-color: #ffffff;
+}
 .social-detail {
   display: flex;
   flex-direction: row;
