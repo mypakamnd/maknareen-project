@@ -388,7 +388,7 @@ import "boxicons";
     font-weight: 600;
   }
   .cover-background {
-    height: 100vh;
+    height: 100svh;
     max-width: 100%;
     background-size: cover;
     background-position: top;
