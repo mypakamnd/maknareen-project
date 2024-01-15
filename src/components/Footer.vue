@@ -7,7 +7,7 @@
       <div class="txt-title">
         <img
           class="img-logo"
-          src="../../assets/maknareen.png"
+          src="../../assets/maknareen2.png"
           alt=""
           style="width: 70px"
         />
