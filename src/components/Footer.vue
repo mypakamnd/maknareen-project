@@ -5,19 +5,19 @@
   <section id="footer">
     <div class="footer">
       <div class="txt-title">
-        <div class="maknareen-logo">
-          <img
-            src="../../assets/logo-no-background.png"
-            alt=""
-            style="width: 100px"
-          />
-        </div>
+        <img
+          class="img-logo"
+          src="../../assets/maknareen.png"
+          alt=""
+          style="width: 70px"
+        />
+
         <div class="made-by">© 2024 Maknareen</div>
         <div class="image-by">
           <div class="thank-you-title">ขอบคุณรูปภาพจาก</div>
           <a
             href="https://www.facebook.com/profile.php?id=100057394691595"
-            style="color: #ff84f9"
+            style="color: #044560"
             ><div class="facebook-page-link">พริกป่น48</div></a
           >
         </div>
@@ -68,7 +68,7 @@
 
 .facebook-page-link {
   padding-left: 5px;
-  color: #ff84f9;
+  color: #044560;
   font-family: "IBM Plex Sans Thai";
   font-size: 14px;
   font-style: normal;
@@ -76,11 +76,6 @@
   line-height: normal;
 }
 
-.maknareen-logo {
-  width: 100px;
-  height: 30px;
-  margin-bottom: 10px;
-}
 /* Ipad size */
 @media screen and (max-width: 1024px) {
 }

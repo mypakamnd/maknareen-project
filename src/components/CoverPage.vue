@@ -192,6 +192,11 @@ import "boxicons";
     text-decoration: none;
   }
 
+  a:link:hover {
+    text-decoration-line: underline;
+    text-decoration-color: #044560;
+  }
+
   .line-menu {
     margin: 0px 20px 0px 20px;
     width: 1px;
