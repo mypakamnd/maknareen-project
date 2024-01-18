@@ -48,14 +48,14 @@ onMounted(async () => {
 
           meenEvents.push(event);
           if (querySnapshot.size === index) {
-            console.log("meenEvents >>", meenEvents);
+            // console.log("meenEvents >>", meenEvents);
             resolve(meenEvents);
           }
         });
       });
     };
     const eventJa = await promise();
-    console.log("eventJa >>", eventJa);
+    // console.log("eventJa >>", eventJa);
     events.value = eventJa;
   });
 });

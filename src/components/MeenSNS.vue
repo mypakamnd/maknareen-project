@@ -338,5 +338,9 @@ a:link {
   .line-social {
     width: 320px;
   }
+
+  span {
+    font-size: 18px;
+  }
 }
 </style>

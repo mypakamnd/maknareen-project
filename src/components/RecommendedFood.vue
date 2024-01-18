@@ -38,14 +38,14 @@ onMounted(async () => {
 
           shops.push(shop);
           if (querySnapshot.size === index) {
-            console.log("shops >>", shops);
+            // console.log("shops >>", shops);
             resolve(shops);
           }
         });
       });
     };
     const shopJa = await promise();
-    console.log("shopJa >>", shopJa);
+    // console.log("shopJa >>", shopJa);
     shopList.value = shopJa;
   });
 });
