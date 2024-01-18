@@ -141,7 +141,7 @@ onMounted(async () => {
 }
 
 .recommended-card {
-  margin: 0px 10px 20px 0px;
+  margin: 0px 0px 20px 0px;
   display: flex;
   flex-direction: row;
   border-radius: 20px;
