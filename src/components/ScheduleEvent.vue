@@ -1,30 +1,62 @@
 <script setup>
 import { db } from "../firebase/init.js";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  doc,
+  deleteDoc,
+  updateDoc,
+  query,
+  orderBy,
+} from "firebase/firestore";
 import { ref, onMounted } from "vue";
+import {
+  getStorage,
+  uploadBytesResumable,
+  ref as storageRef,
+  getDownloadURL,
+} from "firebase/storage";
 
 const scheduleCollection = collection(db, "schedule");
 const queryScheduleCollcetion = query(
   scheduleCollection,
   orderBy("dateAdd", "asc")
 );
+const storage = getStorage();
+
 const events = ref([]);
 onMounted(async () => {
-  onSnapshot(queryScheduleCollcetion, (querySnapshot) => {
-    const meenEvents = [];
-    querySnapshot.forEach((doc) => {
-      const meenEvent = {
-        id: doc.id,
-        eventDate: doc.data().eventDate,
-        eventDetail: doc.data().eventDetail,
-        eventImage: doc.data().eventImage,
-        eventLocation: doc.data().eventLocation,
-        eventName: doc.data().eventName,
-      };
+  onSnapshot(queryScheduleCollcetion, async (querySnapshot) => {
+    const promise = () => {
+      return new Promise((resolve) => {
+        const meenEvents = [];
+        let index = 0;
+        querySnapshot.forEach(async (doc) => {
+          const imageRef = storageRef(storage, `${doc.data().eventImage}`);
+          const url = await getDownloadURL(imageRef);
+          const event = {
+            id: doc.id,
+            eventDate: doc.data().eventDate,
+            eventDetail: doc.data().eventDetail,
+            eventImage: url,
+            eventLocation: doc.data().eventLocation,
+            eventName: doc.data().eventName,
+          };
 
-      meenEvents.push(meenEvent);
-    });
-    events.value = meenEvents;
+          index++;
+
+          meenEvents.push(event);
+          if (querySnapshot.size === index) {
+            console.log("meenEvents >>", meenEvents);
+            resolve(meenEvents);
+          }
+        });
+      });
+    };
+    const eventJa = await promise();
+    console.log("eventJa >>", eventJa);
+    events.value = eventJa;
   });
 });
 </script>

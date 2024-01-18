@@ -13,6 +13,7 @@ import ConfirmPage from "./components/ConfirmPage.vue";
 import index from "./components/Index.vue";
 import FlowerList from "./components/FlowerList.vue";
 import WriteMessage from "./components/WriteMessage.vue";
+import birthdayProject from "./views/birthdayProject.vue";
 
 // Import icon libraries
 import "@quasar/extras/material-icons/material-icons.css";
@@ -41,6 +42,7 @@ const router = createRouter({
     { path: "/index", component: index },
     { path: "/FlowerList", component: FlowerList },
     { path: "/WriteMessage", component: WriteMessage },
+    { path: "/goodpluming21ossom", component: birthdayProject },
   ],
 });
 

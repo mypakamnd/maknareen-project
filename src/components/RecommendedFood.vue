@@ -1,29 +1,52 @@
 <script setup>
 import { db } from "../firebase/init.js";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { ref, onMounted } from "vue";
+import "boxicons";
+import {
+  getStorage,
+  uploadBytesResumable,
+  ref as storageRef,
+  getDownloadURL,
+} from "firebase/storage";
 
-const scheduleCollection = collection(db, "reccomendedFood");
+const reccomendedFoodCollection = collection(db, "reccomendedFood");
+const storage = getStorage();
 
 const shopList = ref([]);
 onMounted(async () => {
-  onSnapshot(scheduleCollection, (querySnapshot) => {
-    const shops = [];
-    querySnapshot.forEach((doc) => {
-      const shop = {
-        id: doc.id,
-        allShopBranchs: doc.data().allShopBranchs,
-        menuPrice: doc.data().menuPrice,
-        menuSignature: doc.data().menuSignature,
-        shopDetails: doc.data().shopDetails,
-        shopImage: doc.data().shopImage,
-        shopName: doc.data().shopName,
-      };
+  onSnapshot(reccomendedFoodCollection, async (querySnapshot) => {
+    const promise = () => {
+      return new Promise((resolve) => {
+        const shops = [];
+        let index = 0;
+        querySnapshot.forEach(async (doc) => {
+          const imageRef = storageRef(storage, `${doc.data().UrlImage}`);
+          const url = await getDownloadURL(imageRef);
+          const shop = {
+            id: doc.id,
+            allShopBranchs: doc.data().allShopBranchs,
+            menuPrice: doc.data().menuPrice,
+            menuSignature: doc.data().menuSignature,
+            shopDetails: doc.data().shopDetails,
+            shopImage: doc.data().shopImage,
+            shopName: doc.data().shopName,
+            UrlImage: url,
+          };
 
-      shops.push(shop);
-    });
-    shopList.value = shops;
-    console.log(shopList.value);
+          index++;
+
+          shops.push(shop);
+          if (querySnapshot.size === index) {
+            console.log("shops >>", shops);
+            resolve(shops);
+          }
+        });
+      });
+    };
+    const shopJa = await promise();
+    console.log("shopJa >>", shopJa);
+    shopList.value = shopJa;
   });
 });
 </script>
@@ -38,10 +61,7 @@ onMounted(async () => {
 
       <div class="recommended-list">
         <div class="recommended-card" v-for="shop in shopList" :key="shop">
-          <div
-            class="menu-image"
-            v-bind:style="{ 'background-image': 'url(' + shop.shopImage + ')' }"
-          ></div>
+          <img class="menu-image" :src="shop.UrlImage" alt="" />
           <div class="menu-details">
             <div class="shop-name">{{ shop.shopName }}</div>
             <div class="shop-detail">
@@ -114,14 +134,14 @@ onMounted(async () => {
 .recommended-list {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 20px 0px 0px 0px;
 }
 
 .recommended-card {
-  margin-bottom: 20px;
+  margin: 0px 10px 20px 0px;
   display: flex;
   flex-direction: row;
   border-radius: 20px;
