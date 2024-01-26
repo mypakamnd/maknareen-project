@@ -59,6 +59,13 @@ import "boxicons";
             ></box-icon
           ></a>
         </div>
+        <div class="birthday-project">
+          <router-link to="/goodpluming21ossom"
+            ><button class="outline-button">
+              Goodpluming21ossom Project
+            </button></router-link
+          >
+        </div>
       </div>
       <div class="rightContainer"></div>
     </div>
@@ -70,6 +77,28 @@ import "boxicons";
 
 /* Desktop size */
 @media only screen and (min-width: 1024px) {
+  .birthday-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .outline-button {
+    background-color: transparent;
+    color: #044560;
+    border: 2px solid #044560;
+    padding: 10px 10px;
+    margin: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .outline-button:hover {
+    background-color: #044560;
+    color: #fff;
+  }
   .scroll-down-btn {
     position: absolute;
     left: 50%;
@@ -123,7 +152,7 @@ import "boxicons";
     height: 100vh;
     max-width: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     flex-shrink: 0;
     background-image: url("../../assets/CoverImage.png");
     display: flex;
@@ -145,6 +174,7 @@ import "boxicons";
     font-style: normal;
     font-weight: 700;
     line-height: 154.689%; /* 61.876px */
+    text-align: center;
   }
 
   .title-fullname {
@@ -208,6 +238,28 @@ import "boxicons";
 /* Ipad size */
 
 @media only screen and (max-width: 1024px) {
+  .birthday-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .outline-button {
+    background-color: transparent;
+    color: #044560;
+    border: 2px solid #044560;
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .outline-button:hover {
+    background-color: #044560;
+    color: #fff;
+  }
   .scroll-down-btn {
     position: absolute;
     left: 50%;
@@ -261,7 +313,7 @@ import "boxicons";
     height: 100vh;
     max-width: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     flex-shrink: 0;
     background-image: url("../../assets/IpadCoverImage.png");
     display: flex;
@@ -284,6 +336,7 @@ import "boxicons";
     font-style: normal;
     font-weight: 700;
     line-height: 154.689%; /* 61.876px */
+    text-align: center;
   }
 
   .title-fullname {
@@ -298,7 +351,7 @@ import "boxicons";
   }
   .btn-group {
     display: flex;
-    justify-content: start;
+    justify-content: center;
   }
 
   .q-btn:before {
@@ -397,7 +450,8 @@ import "boxicons";
     background-size: cover;
     background-position: top;
     flex-shrink: 0;
-    background-image: url("../../assets/MobileCoverImage.png");
+    background: linear-gradient(to top, #ffffff 0%, #0000 80%),
+      url("../../assets/MobileCoverImage.png") top/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -425,6 +479,7 @@ import "boxicons";
     font-style: normal;
     font-weight: 700;
     line-height: 154.689%; /* 61.876px */
+    text-align: center;
   }
 
   .title-fullname {

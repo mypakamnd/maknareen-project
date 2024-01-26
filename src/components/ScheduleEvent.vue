@@ -1,15 +1,6 @@
 <script setup>
 import { db } from "../firebase/init.js";
-import {
-  collection,
-  onSnapshot,
-  addDoc,
-  doc,
-  deleteDoc,
-  updateDoc,
-  query,
-  orderBy,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { ref, onMounted } from "vue";
 import {
   getStorage,
@@ -21,7 +12,7 @@ import {
 const scheduleCollection = collection(db, "schedule");
 const queryScheduleCollcetion = query(
   scheduleCollection,
-  orderBy("dateAdd", "asc")
+  orderBy("date", "desc")
 );
 const storage = getStorage();
 
@@ -67,45 +58,49 @@ onMounted(async () => {
       <div class="schedule-title">Meen's Event Schedule</div>
 
       <div class="schedule-list">
-        <div class="schedule" v-for="event in events" :key="event">
-          <img class="img-cover-event" :src="event.eventImage" alt="" />
-          <div class="detail">
-            <div class="title-group">
-              <div class="event-name-and-btn">
-                <div class="event-title">{{ event.eventName }}</div>
-                <div class="btn-group-detail">
-                  <q-btn
-                    outline
-                    label="Detail"
-                    class="btn-detail"
-                    :href="event.eventDetail"
-                    target="_blank"
-                  ></q-btn>
-                </div>
-              </div>
-              <div class="date-and-location">
-                <div class="event-date">
-                  <div class="icon">
-                    <box-icon
-                      type="solid"
-                      name="calendar-event"
-                      size="sm"
-                      color="#044560"
-                    ></box-icon>
+        <div class="no-shedule" v-if="events.length === 0">
+          <span>ไม่มี Event ในเร็ว ๆ นี้ ...</span>
+        </div>
+        <div class="have-event" v-else>
+          <div class="schedule" v-for="event in events" :key="event">
+            <img class="img-cover-event" :src="event.eventImage" alt="" />
+            <div class="detail">
+              <div class="title-group">
+                <div class="event-name-and-btn">
+                  <div class="event-title">{{ event.eventName }}</div>
+                  <div class="btn-group-detail">
+                    <a
+                      :href="event.eventDetail"
+                      target="_blank"
+                      class="btn-detail"
+                      >DETAIL</a
+                    >
                   </div>
-                  <div class="date-txt">{{ event.eventDate }}</div>
                 </div>
-                <div class="location">
-                  <div class="icon">
-                    <box-icon
-                      name="map"
-                      type="solid"
-                      size="sm"
-                      color="#044560"
-                    ></box-icon>
+                <div class="date-and-location">
+                  <div class="event-date">
+                    <div class="icon">
+                      <box-icon
+                        type="solid"
+                        name="calendar-event"
+                        size="sm"
+                        color="#044560"
+                      ></box-icon>
+                    </div>
+                    <div class="date-txt">{{ event.eventDate }}</div>
                   </div>
-                  <div class="location-txt">
-                    {{ event.eventLocation }}
+                  <div class="location">
+                    <div class="icon">
+                      <box-icon
+                        name="map"
+                        type="solid"
+                        size="sm"
+                        color="#044560"
+                      ></box-icon>
+                    </div>
+                    <div class="location-txt">
+                      {{ event.eventLocation }}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -120,6 +115,13 @@ onMounted(async () => {
 <style scoped>
 /* Desktop size */
 @media only screen and (min-width: 1024px) {
+  a:link {
+    text-decoration-line: none;
+  }
+
+  a:link:hover {
+    text-decoration-line: none;
+  }
   .event-schedule {
     display: flex;
     justify-content: center;
@@ -151,6 +153,26 @@ onMounted(async () => {
     justify-content: center;
     flex-wrap: wrap;
     padding: 0px 0px 100px 0px;
+  }
+
+  .have-event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .no-shedule {
+    padding: 150px 0px 250px 0px;
+  }
+
+  span {
+    color: #044560;
+    opacity: 70%;
+    font-family: "IBM Plex Sans Thai";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
   }
 
   .schedule-title {
@@ -239,14 +261,31 @@ onMounted(async () => {
   }
 
   .btn-detail {
+    background-color: transparent;
     color: #044560;
-    font-family: Quicksand;
-    font-weight: 700;
-    padding: 0px 20px 0px 20px;
+    border: 1px solid #044560;
+    padding: 5px 17px;
+    font-size: 14px;
+    line-height: 1.715em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-detail:hover {
+    background-color: #044560;
+    color: #fff;
   }
 }
 /* Ipad size */
 @media only screen and (max-width: 1024px) {
+  a:link {
+    text-decoration-line: none;
+  }
+
+  a:link:hover {
+    text-decoration-line: none;
+  }
   .event-schedule {
     display: flex;
     justify-content: center;
@@ -279,6 +318,13 @@ onMounted(async () => {
     justify-content: center;
     flex-wrap: wrap;
     padding: 0px 0px 100px 0px;
+  }
+
+  .have-event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .schedule-title {
@@ -372,9 +418,33 @@ onMounted(async () => {
     font-weight: 700;
     padding: 0px 20px 0px 20px;
   }
+
+  .btn-detail {
+    background-color: transparent;
+    color: #044560;
+    border: 1px solid #044560;
+    padding: 5px 17px;
+    font-size: 14px;
+    line-height: 1.715em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-detail:hover {
+    background-color: #044560;
+    color: #fff;
+  }
 }
 /* mobile size */
 @media only screen and (max-width: 480px) {
+  a:link {
+    text-decoration-line: none;
+  }
+
+  a:link:hover {
+    text-decoration-line: none;
+  }
   .event-schedule {
     display: flex;
     justify-content: center;
@@ -409,6 +479,13 @@ onMounted(async () => {
     padding: 0px 0px 100px 0px;
   }
 
+  .have-event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .schedule-title {
     margin-bottom: 30px;
     margin-top: 100px;
@@ -428,7 +505,7 @@ onMounted(async () => {
     flex-direction: column;
     align-items: center;
     margin: 20px 10px 20px 10px;
-    height: 450px;
+    height: auto;
   }
   .img-cover-event {
     width: 300px;
@@ -455,7 +532,7 @@ onMounted(async () => {
   .location {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
   }
 
   .event-title {
@@ -490,12 +567,21 @@ onMounted(async () => {
     align-items: start;
     margin: 0px 10px 0px 0px;
   }
-
   .btn-detail {
+    background-color: transparent;
     color: #044560;
-    font-family: Quicksand;
-    font-weight: 700;
-    padding: 0px 20px 0px 20px;
+    border: 1px solid #044560;
+    padding: 5px 17px;
+    font-size: 12px;
+    line-height: 1.715em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-detail:hover {
+    background-color: #044560;
+    color: #fff;
   }
 }
 </style>

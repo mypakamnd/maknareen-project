@@ -276,7 +276,11 @@ span {
 }
 
 a:link {
-  text-decoration: none;
+  text-decoration-line: none;
+}
+
+a:link:hover {
+  text-decoration-line: none;
 }
 
 /* Ipad size */
