@@ -21,7 +21,10 @@ import Souvenir from "../components/Souvenir.vue";
         <div class="made-by">© 2024 Maknareen x NonMernCGN48</div>
         <div class="image-by">
           <div class="thank-you-title">ขอบคุณรูปภาพและโลโก้จาก</div>
-          <a href="https://twitter.com/lnwearthza007" style="color: #044560"
+          <a
+            href="https://twitter.com/lnwearthza007"
+            style="color: #044560"
+            target="_blank"
             ><div class="facebook-page-link">โลก's</div></a
           >
         </div>
@@ -35,7 +38,7 @@ import Souvenir from "../components/Souvenir.vue";
   width: 100%;
   height: 192px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f8fafc;

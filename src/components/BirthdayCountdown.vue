@@ -31,6 +31,11 @@
       </div>
     </div>
     <div class="donation-date">Donation Date : 10 JAN 2024 - 16 FEB 2023</div>
+    <div class="birthday-project">
+      <router-link to="/goodpluming21ossom"
+        ><button class="outline-button">Back to Homepage</button></router-link
+      >
+    </div>
   </div>
 </template>
 
@@ -69,6 +74,28 @@ export default {
 </script>
 
 <style scoped>
+.birthday-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outline-button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 10px;
+  margin: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.outline-button:hover {
+  background-color: #ffffff;
+  color: #2c3e50;
+}
 .scroll-down-btn {
   position: absolute;
   left: 50%;

@@ -18,6 +18,7 @@
           <a
             href="https://www.facebook.com/profile.php?id=100057394691595"
             style="color: #044560"
+            target="_blank"
             ><div class="facebook-page-link">พริกป่น48</div></a
           >
         </div>
