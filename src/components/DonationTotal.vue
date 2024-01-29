@@ -46,30 +46,25 @@ onMounted(async () => {
     <div class="description">
       <div class="leftpercent">
         <div class="icon-and-percent">
-          <img src="../../assets/บริจาค.png" style="width: 100px" alt="" />
+          <img src="../../assets/บริจาค.png" alt="" />
           <span class="percentage-number">80%</span>
         </div>
         <div class="span-description">
           <span class="percentage-description"
-            >80% ของยอดโดเนทจะถูกนำไปบริจาค</span
-          >
-          <span class="percentage-description"
-            >ให้เด็กกำพร้าและสุนัขและแมวจร</span
+            >80% ของยอดโดเนทจะถูกนำไปบริจาคให้เด็กกำพร้าและสุนัขและแมวจร</span
           >
         </div>
       </div>
       <div class="line"></div>
       <div class="leftpercent">
         <div class="icon-and-percent">
-          <img src="../../assets/cafe.png" style="width: 100px" alt="" />
+          <img src="../../assets/cafe.png" />
           <span class="percentage-number">20%</span>
         </div>
         <div class="span-description">
           <span class="percentage-description"
-            >20% ของยอดโดเนท จะถูกนำไปทำ project</span
-          >
-          <span class="percentage-description"
-            >โดยจะมี รถแดง, คาเฟ่ CNX & BKK</span
+            >20% ของยอดโดเนท จะถูกนำไปทำ project โดยจะมี รถแดง, คาเฟ่ CNX &
+            BKK</span
           >
         </div>
       </div>
@@ -195,5 +190,72 @@ onMounted(async () => {
   height: 200px;
   background-color: #044560;
   margin: 0px 20px 0px 20px;
+}
+
+img {
+  width: 100px;
+}
+/* Ipad size */
+@media screen and (max-width: 1024px) {
+  .donation-total {
+    height: auto;
+  }
+
+  .description {
+    padding: 30px 0px 100px 0px;
+  }
+}
+
+/* Mobile size */
+@media screen and (max-width: 480px) {
+  .donation-Goal-title {
+    font-size: 28px;
+  }
+
+  .donation-title {
+    font-size: 20px;
+  }
+  .donation-total-number {
+    font-size: 40px;
+  }
+
+  .donation-baht {
+    font-size: 12px;
+    padding: 20px 00px 0px 5px;
+  }
+
+  .flower-icon {
+    width: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  .total-donate-card {
+    padding: 40px 0px 40px 0px;
+    border-radius: 20px;
+  }
+
+  .lasted-update-title {
+    font-size: 12px;
+  }
+  .line {
+    width: 2px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  img {
+    width: 70px;
+  }
+
+  .percentage-number {
+    font-size: 30px;
+  }
+
+  .percentage-description {
+    font-size: 12px;
+  }
+
+  .leftpercent {
+    width: 150px;
+  }
 }
 </style>

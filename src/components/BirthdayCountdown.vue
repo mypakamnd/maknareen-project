@@ -10,19 +10,25 @@
 
       <div class="line-menu"></div>
       <a class="menu-title" href="#souvenir" v-smooth-scroll>ของที่ระลึก</a>
-      <div class="line-menu"></div>
-      <a class="menu-title" href="#" v-smooth-scroll>Goodpluming21ossom</a>
     </nav>
     <div class="countdown-title">Donate countdown</div>
     <div class="countdown">
-      <span class="days">{{ days }}</span>
-      <span class="label">Days</span>
-      <span class="hours">{{ hours }}</span>
-      <span class="label">Hours</span>
-      <span class="minutes">{{ minutes }}</span>
-      <span class="label">Minutes</span>
-      <span class="seconds">{{ seconds }}</span>
-      <span class="label">Seconds</span>
+      <div class="countdown-time">
+        <span class="days">{{ days }}</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="countdown-time">
+        <span class="hours">{{ hours }}</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="countdown-time">
+        <span class="minutes">{{ minutes }}</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="countdown-time">
+        <span class="seconds">{{ seconds }}</span>
+        <span class="label">Seconds</span>
+      </div>
     </div>
     <div class="donation-date">Donation Date : 10 JAN 2024 - 16 FEB 2023</div>
   </div>
@@ -62,7 +68,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .scroll-down-btn {
   position: absolute;
   left: 50%;
@@ -125,7 +131,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  padding-top: 100px;
+  padding: 100px 0px 0px 0px;
 }
 
 .countdown {
@@ -134,8 +140,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: row;
   font-family: Quicksand;
-  padding-bottom: 20px;
 }
 
 .countdown > span {
@@ -148,6 +154,7 @@ export default {
   font-size: 0.3em;
   text-transform: uppercase;
   color: #ffffff;
+  padding: 0px 20px;
 }
 
 .countdown-title {
@@ -160,6 +167,15 @@ export default {
   color: #ffffff;
 }
 
+.countdown-time {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px 0px 0px;
+  justify-content: center;
+  color: #ffffff;
+  align-items: center;
+}
+
 .donation-date {
   font-family: Quicksand;
   text-align: center;
@@ -167,6 +183,7 @@ export default {
   font-style: normal;
   font-weight: 500;
   color: #ffffff;
+  padding: 0px;
 }
 
 .menu-nav {
@@ -202,5 +219,46 @@ a:link:hover {
   width: 1px;
   height: 20px;
   border: 0.8px solid #ffffff;
+}
+
+/* Mobile size */
+@media screen and (max-width: 480px) {
+  #countdown {
+    flex-direction: column;
+  }
+
+  .countdown {
+    flex-direction: row;
+    font-size: 3em;
+  }
+
+  .menu-nav {
+    display: none;
+  }
+  .countdown-title {
+    font-size: 28px;
+    padding: 50px;
+  }
+  .countdown-time {
+    padding: 0px;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .days,
+  .hours,
+  .minutes,
+  .seconds {
+    width: 50px;
+  }
+
+  #countdown {
+    padding: 0px;
+  }
+
+  .donation-date {
+    font-size: 16px;
+    padding: 10px;
+  }
 }
 </style>

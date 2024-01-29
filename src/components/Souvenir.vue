@@ -28,46 +28,52 @@
     <div class="souvenir-sub-title-2">
       เมื่อโดเนทถึงแต่ละ Tier จะได้รับของที่ระลึกตามลำดับ
     </div>
-    <div class="tier-1">
-      <div class="title">
-        <div class="tier-title">Tier 1</div>
-        <div class="donate-price">165 baht</div>
+    <div class="tier-list">
+      <div class="tier-1">
+        <div class="title">
+          <div class="tier-title">Tier 1</div>
+          <div class="donate-price">165 baht</div>
+        </div>
+        <div class="img-tier">
+          <img src="../../assets/พวงกุญแจถัก2.png" alt="" />
+          <span class="souvenir-title-items">พวงกุญแจถัก</span>
+        </div>
       </div>
-      <div class="img-tier">
-        <img src="../../assets/พวงกุญแจถัก2.png" style="width: 100px" alt="" />
-        <span>พวงกุญแจถัก</span>
+      <div class="tier-1">
+        <div class="title">
+          <div class="tier-title">Tier 2</div>
+          <div class="donate-price">385 baht</div>
+        </div>
+        <div class="img-tier">
+          <img src="../../assets/พวงกุญแจถัก2.png" alt="" />
+          <span class="souvenir-title-items">พวงกุญแจถัก</span>
+        </div>
+        <div class="img-tier">
+          <img src="../../assets/เทียนหอม.png" alt="" />
+          <span class="souvenir-title-items"
+            >เทียนหอมกลิ่น Blossom Bouquet</span
+          >
+        </div>
       </div>
-    </div>
-    <div class="tier-1">
-      <div class="title">
-        <div class="tier-title">Tier 2</div>
-        <div class="donate-price">385 baht</div>
-      </div>
-      <div class="img-tier">
-        <img src="../../assets/พวงกุญแจถัก2.png" style="width: 100px" alt="" />
-        <span>พวงกุญแจถัก</span>
-      </div>
-      <div class="img-tier">
-        <img src="../../assets/เทียนหอม.png" style="width: 100px" alt="" />
-        <span>เทียนหอมกลิ่น Blossom Bouquet</span>
-      </div>
-    </div>
-    <div class="tier-1">
-      <div class="title">
-        <div class="tier-title">Tier 2</div>
-        <div class="donate-price">595 baht</div>
-      </div>
-      <div class="img-tier">
-        <img src="../../assets/พวงกุญแจถัก2.png" style="width: 100px" alt="" />
-        <span>พวงกุญแจถัก</span>
-      </div>
-      <div class="img-tier">
-        <img src="../../assets/เทียนหอม.png" style="width: 100px" alt="" />
-        <span>เทียนหอมกลิ่น Blossom Bouquet</span>
-      </div>
-      <div class="img-tier">
-        <img src="../../assets/กระเป๋า.png" style="width: 100px" alt="" />
-        <span>กระเป๋า ขนาด 14.5×18.5 cm</span>
+      <div class="tier-1">
+        <div class="title">
+          <div class="tier-title">Tier 2</div>
+          <div class="donate-price">595 baht</div>
+        </div>
+        <div class="img-tier">
+          <img src="../../assets/พวงกุญแจถัก2.png" alt="" />
+          <span class="souvenir-title-items">พวงกุญแจถัก</span>
+        </div>
+        <div class="img-tier">
+          <img src="../../assets/เทียนหอม.png" alt="" />
+          <span class="souvenir-title-items"
+            >เทียนหอมกลิ่น Blossom Bouquet</span
+          >
+        </div>
+        <div class="img-tier">
+          <img src="../../assets/กระเป๋า.png" alt="" />
+          <span class="souvenir-title-items">กระเป๋า ขนาด 14.5×18.5 cm</span>
+        </div>
       </div>
     </div>
 
@@ -154,6 +160,12 @@ span {
   color: #044560;
 }
 
+.tier-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .tier-1 {
   display: flex;
   flex-direction: row;
@@ -212,5 +224,99 @@ span {
 
 a:link {
   text-decoration: none;
+}
+
+.souvenir-title-items {
+  width: auto;
+}
+
+img {
+  width: 100px;
+}
+/* Ipad size */
+@media screen and (max-width: 1024px) {
+  .img-souvenir {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .span {
+    font-size: 16px;
+  }
+
+  .title {
+    padding: 0px 20px 0px 0px;
+  }
+
+  .tier-1 {
+    width: 650px;
+  }
+
+  .souvenir-title-items {
+    width: 150px;
+  }
+}
+
+/* Mobile size */
+@media screen and (max-width: 480px) {
+  .souvenir-title {
+    font-size: 28px;
+  }
+
+  .souvenir-sub-title {
+    font-size: 14px;
+  }
+
+  .img-souvenir {
+    width: 80px;
+    padding: 0px;
+  }
+
+  .items {
+    padding: 5px;
+  }
+
+  span {
+    font-size: 12px;
+    width: 100px;
+  }
+
+  .souvenir-sub-title-3 {
+    font-size: 12px;
+    width: 300px;
+    padding: 10px;
+  }
+
+  .souvenir-sub-title-2[data-v-d0cc7f49] {
+    font-size: 14px;
+  }
+
+  img {
+    width: 50px;
+  }
+
+  .tier-1 {
+    width: 320px;
+  }
+
+  .donate-price {
+    font-size: 16px;
+  }
+  .tier-title {
+    font-size: 12px;
+  }
+
+  .souvenir-title-items {
+    font-size: 10px;
+    width: 70px;
+  }
+
+  .img-tier {
+    padding: 5px;
+  }
+
+  .title {
+    padding: 0px 10px 0px 0px;
+  }
 }
 </style>
