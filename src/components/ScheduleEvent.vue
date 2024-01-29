@@ -1,6 +1,15 @@
 <script setup>
 import { db } from "../firebase/init.js";
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  limit,
+  where,
+  doc,
+  getDocs,
+} from "firebase/firestore";
 import { ref, onMounted } from "vue";
 import {
   getStorage,
@@ -9,46 +18,43 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
-const scheduleCollection = collection(db, "schedule");
-const queryScheduleCollcetion = query(
-  scheduleCollection,
-  orderBy("date", "desc")
-);
+const q = query(collection(db, "schedule"), orderBy("date", "asc"));
+
 const storage = getStorage();
 
 const events = ref([]);
 onMounted(async () => {
-  onSnapshot(queryScheduleCollcetion, async (querySnapshot) => {
-    const promise = () => {
-      return new Promise((resolve) => {
-        const meenEvents = [];
-        let index = 0;
-        querySnapshot.forEach(async (doc) => {
-          const imageRef = storageRef(storage, `${doc.data().eventImage}`);
-          const url = await getDownloadURL(imageRef);
-          const event = {
-            id: doc.id,
-            eventDate: doc.data().eventDate,
-            eventDetail: doc.data().eventDetail,
-            eventImage: url,
-            eventLocation: doc.data().eventLocation,
-            eventName: doc.data().eventName,
-          };
-
-          index++;
-
-          meenEvents.push(event);
-          if (querySnapshot.size === index) {
-            // console.log("meenEvents >>", meenEvents);
-            resolve(meenEvents);
-          }
-        });
-      });
-    };
-    const eventJa = await promise();
-    // console.log("eventJa >>", eventJa);
-    events.value = eventJa;
+  const querySnapshot = await getDocs(q);
+  console.log(querySnapshot);
+  querySnapshot.forEach(async (doc) => {
+    console.log(doc.id, " => ", doc.data());
   });
+
+  const meenEvents = [];
+  for (const doc of querySnapshot.docs) {
+    // console.log("event.data >>", doc.data());
+
+    const imageRef = storageRef(storage, `${doc.data().eventImage}`);
+    const url = await getDownloadURL(imageRef);
+    const event = {
+      id: doc.id,
+      eventDate: doc.data().eventDate,
+      eventDetail: doc.data().eventDetail,
+      eventImage: url,
+      eventLocation: doc.data().eventLocation,
+      eventName: doc.data().eventName,
+      date: doc.data().date,
+    };
+
+    meenEvents.push(event);
+  }
+
+  events.value = meenEvents;
+  console.log("meenEvents >>", meenEvents);
+
+  const event = await promise();
+  console.log("event >>", event);
+  events.value = event;
 });
 </script>
 
@@ -327,6 +333,26 @@ onMounted(async () => {
     flex-wrap: wrap;
   }
 
+  .have-event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .no-shedule {
+    padding: 150px 0px 250px 0px;
+  }
+
+  span {
+    color: #044560;
+    opacity: 70%;
+    font-family: "IBM Plex Sans Thai";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
   .schedule-title {
     margin-bottom: 40px;
     margin-top: 0px;
@@ -484,6 +510,26 @@ onMounted(async () => {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .have-event {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .no-shedule {
+    padding: 150px 0px 250px 0px;
+  }
+
+  span {
+    color: #044560;
+    opacity: 70%;
+    font-family: "IBM Plex Sans Thai";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
   }
 
   .schedule-title {
