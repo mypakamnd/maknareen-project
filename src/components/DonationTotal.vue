@@ -33,10 +33,10 @@ onMounted(async () => {
     <div class="donation-title">Donation Total</div>
     <div class="total-donate-card">
       <div class="total-and-baht">
-        <img class="flower-icon" src="../../assets/flowerIcon.png" alt="" />
+        <img class="flower-icon" src="../../assets/ดอกไม้2.png" alt="" />
         <div class="donation-total-number">{{ donateTotal }}</div>
         <div class="donation-baht">baht</div>
-        <img class="flower-icon" src="../../assets/flowerIcon.png" alt="" />
+        <img class="flower-icon" src="../../assets/ดอกไม้2.png" alt="" />
       </div>
       <div class="lasted-update-title">Lasted Update : {{ updateLasted }}</div>
       <div class="lasted-update-title">
@@ -46,7 +46,7 @@ onMounted(async () => {
     <div class="description">
       <div class="leftpercent">
         <div class="icon-and-percent">
-          <img src="../../assets/80percent.png" style="width: 100px" alt="" />
+          <img src="../../assets/บริจาค.png" style="width: 100px" alt="" />
           <span class="percentage-number">80%</span>
         </div>
         <div class="span-description">
@@ -61,7 +61,7 @@ onMounted(async () => {
       <div class="line"></div>
       <div class="leftpercent">
         <div class="icon-and-percent">
-          <img src="../../assets/20percent.png" style="width: 100px" alt="" />
+          <img src="../../assets/cafe.png" style="width: 100px" alt="" />
           <span class="percentage-number">20%</span>
         </div>
         <div class="span-description">

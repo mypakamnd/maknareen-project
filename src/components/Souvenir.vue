@@ -9,15 +9,15 @@
     </div>
     <div class="all-souvenir">
       <div class="items">
-        <img class="img-souvenir" src="../../assets/keychain.png" alt="" />
+        <img class="img-souvenir" src="../../assets/พวงกุญแจถัก2.png" alt="" />
         <span>พวงกุญแจถัก</span>
       </div>
       <div class="items">
-        <img class="img-souvenir" src="../../assets/candle.png" alt="" />
+        <img class="img-souvenir" src="../../assets/เทียนหอม.png" alt="" />
         <span>เทียนหอมกลิ่น Blossom Bouquet</span>
       </div>
       <div class="items">
-        <img class="img-souvenir" src="../../assets/wallet.png" alt="" />
+        <img class="img-souvenir" src="../../assets/กระเป๋า.png" alt="" />
         <span>กระเป๋า ขนาด 14.5×18.5 cm</span>
       </div>
     </div>
@@ -34,7 +34,7 @@
         <div class="donate-price">165 baht</div>
       </div>
       <div class="img-tier">
-        <img src="../../assets/keychain.png" style="width: 100px" alt="" />
+        <img src="../../assets/พวงกุญแจถัก2.png" style="width: 100px" alt="" />
         <span>พวงกุญแจถัก</span>
       </div>
     </div>
@@ -44,11 +44,11 @@
         <div class="donate-price">385 baht</div>
       </div>
       <div class="img-tier">
-        <img src="../../assets/keychain.png" style="width: 100px" alt="" />
+        <img src="../../assets/พวงกุญแจถัก2.png" style="width: 100px" alt="" />
         <span>พวงกุญแจถัก</span>
       </div>
       <div class="img-tier">
-        <img src="../../assets/candle.png" style="width: 100px" alt="" />
+        <img src="../../assets/เทียนหอม.png" style="width: 100px" alt="" />
         <span>เทียนหอมกลิ่น Blossom Bouquet</span>
       </div>
     </div>
@@ -58,15 +58,15 @@
         <div class="donate-price">595 baht</div>
       </div>
       <div class="img-tier">
-        <img src="../../assets/keychain.png" style="width: 100px" alt="" />
+        <img src="../../assets/พวงกุญแจถัก2.png" style="width: 100px" alt="" />
         <span>พวงกุญแจถัก</span>
       </div>
       <div class="img-tier">
-        <img src="../../assets/candle.png" style="width: 100px" alt="" />
+        <img src="../../assets/เทียนหอม.png" style="width: 100px" alt="" />
         <span>เทียนหอมกลิ่น Blossom Bouquet</span>
       </div>
       <div class="img-tier">
-        <img src="../../assets/wallet.png" style="width: 100px" alt="" />
+        <img src="../../assets/กระเป๋า.png" style="width: 100px" alt="" />
         <span>กระเป๋า ขนาด 14.5×18.5 cm</span>
       </div>
     </div>
