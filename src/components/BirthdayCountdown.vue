@@ -32,7 +32,7 @@
     </div>
     <div class="donation-date">Donation Date : 10 JAN 2024 - 16 FEB 2023</div>
     <div class="birthday-project">
-      <router-link to="/goodpluming21ossom"
+      <router-link to="/"
         ><button class="outline-button">Back to Homepage</button></router-link
       >
     </div>
