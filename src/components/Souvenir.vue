@@ -287,7 +287,7 @@ img {
     padding: 10px;
   }
 
-  .souvenir-sub-title-2[data-v-d0cc7f49] {
+  .souvenir-sub-title-2 {
     font-size: 14px;
   }
 
