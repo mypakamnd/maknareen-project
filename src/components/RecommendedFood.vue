@@ -157,9 +157,7 @@ onMounted(async () => {
   border-radius: 20px 0px 0px 20px;
   width: 200px;
   height: 300px;
-  /* background-image: v-bind(url(shop.shopImage)); */
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 
 .menu-details {
