@@ -197,10 +197,10 @@ export default {
 .countdown-time {
   display: flex;
   flex-direction: row;
-  padding: 20px 0px 0px 0px;
+  padding: 20px 20px 0px 0px;
   justify-content: center;
   color: #ffffff;
-  align-items: center;
+  align-items: start;
 }
 
 .donation-date {
