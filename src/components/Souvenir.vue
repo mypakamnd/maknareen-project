@@ -77,7 +77,7 @@
       </div>
       <div class="tier-1">
         <div class="title">
-          <div class="tier-title">Tier 2</div>
+          <div class="tier-title">Tier 3</div>
           <div class="donate-price">595 baht</div>
         </div>
         <div class="img-tier">
