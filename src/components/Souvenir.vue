@@ -9,21 +9,32 @@
     </div>
     <div class="all-souvenir">
       <div class="items">
-        <img class="img-souvenir" src="../../assets/พวงกุญแจถัก2.png" alt="" />
+        <img
+          class="img-souvenir"
+          src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fkeychain.png?alt=media&token=d08c9579-8bfa-4f91-ad47-d589eb4016f1"
+          alt=""
+        />
         <span>พวงกุญแจถัก</span>
       </div>
       <div class="items">
-        <img class="img-souvenir" src="../../assets/เทียนหอม.png" alt="" />
+        <img
+          class="img-souvenir"
+          src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fcandle.png?alt=media&token=b6238ff5-3b6d-49bf-9a40-6989e165eec5"
+          alt=""
+        />
         <span>เทียนหอมกลิ่น Blossom Bouquet</span>
       </div>
       <div class="items">
-        <img class="img-souvenir" src="../../assets/กระเป๋า.png" alt="" />
+        <img
+          class="img-souvenir"
+          src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fwallet.png?alt=media&token=6b1c3b21-0bff-4212-9462-7988ab1bf6ca"
+          alt=""
+        />
         <span>กระเป๋า ขนาด 14.5×18.5 cm</span>
       </div>
     </div>
     <div class="souvenir-sub-title-3">
-      ** ตัวอย่างของที่ระลึกเป็นเพียง mockup เท่านั้น preview
-      ของที่ระลึกจะเปิดให้ชมเร็ว ๆ นี้ **
+      ** ตัวอย่างของที่ระลึกเป็นเพียง mockup เท่านั้น **
     </div>
     <div class="souvenir-sub-title-2">
       เมื่อโดเนทถึงแต่ละ Tier จะได้รับของที่ระลึกตามลำดับ
@@ -35,7 +46,10 @@
           <div class="donate-price">165 baht</div>
         </div>
         <div class="img-tier">
-          <img src="../../assets/พวงกุญแจถัก2.png" alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fkeychain.png?alt=media&token=d08c9579-8bfa-4f91-ad47-d589eb4016f1"
+            alt=""
+          />
           <span class="souvenir-title-items">พวงกุญแจถัก</span>
         </div>
       </div>
@@ -45,11 +59,17 @@
           <div class="donate-price">385 baht</div>
         </div>
         <div class="img-tier">
-          <img src="../../assets/พวงกุญแจถัก2.png" alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fkeychain.png?alt=media&token=d08c9579-8bfa-4f91-ad47-d589eb4016f1"
+            alt=""
+          />
           <span class="souvenir-title-items">พวงกุญแจถัก</span>
         </div>
         <div class="img-tier">
-          <img src="../../assets/เทียนหอม.png" alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fcandle.png?alt=media&token=b6238ff5-3b6d-49bf-9a40-6989e165eec5"
+            alt=""
+          />
           <span class="souvenir-title-items"
             >เทียนหอมกลิ่น Blossom Bouquet</span
           >
@@ -61,17 +81,26 @@
           <div class="donate-price">595 baht</div>
         </div>
         <div class="img-tier">
-          <img src="../../assets/พวงกุญแจถัก2.png" alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fkeychain.png?alt=media&token=d08c9579-8bfa-4f91-ad47-d589eb4016f1"
+            alt=""
+          />
           <span class="souvenir-title-items">พวงกุญแจถัก</span>
         </div>
         <div class="img-tier">
-          <img src="../../assets/เทียนหอม.png" alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fcandle.png?alt=media&token=b6238ff5-3b6d-49bf-9a40-6989e165eec5"
+            alt=""
+          />
           <span class="souvenir-title-items"
             >เทียนหอมกลิ่น Blossom Bouquet</span
           >
         </div>
         <div class="img-tier">
-          <img src="../../assets/กระเป๋า.png" alt="" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2Fwallet.png?alt=media&token=6b1c3b21-0bff-4212-9462-7988ab1bf6ca"
+            alt=""
+          />
           <span class="souvenir-title-items">กระเป๋า ขนาด 14.5×18.5 cm</span>
         </div>
       </div>
@@ -141,7 +170,7 @@
 }
 
 .img-souvenir {
-  width: 250px;
+  width: 300px;
   padding: 20px;
 }
 
