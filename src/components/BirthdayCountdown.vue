@@ -30,7 +30,7 @@
         <span class="label">Seconds</span>
       </div>
     </div>
-    <div class="donation-date">Donation Date : 10 JAN 2024 - 16 FEB 2023</div>
+    <div class="donation-date">Donation Date : 10 JAN 2024 - 02 MAR 2023</div>
     <div class="birthday-project">
       <router-link to="/"
         ><button class="outline-button">Back to Homepage</button></router-link
@@ -43,7 +43,7 @@
 export default {
   data() {
     return {
-      endTime: new Date("February 16, 2024 00:00:00").getTime(),
+      endTime: new Date("March 02, 2024 23:59:59").getTime(),
       days: 0,
       hours: 0,
       minutes: 0,
