@@ -59,13 +59,13 @@ import "boxicons";
             ></box-icon
           ></a>
         </div>
-        <div class="birthday-project">
+        <!-- <div class="birthday-project">
           <router-link to="/goodpluming21ossom"
             ><button class="outline-button">
               Goodpluming21ossom Project
             </button></router-link
           >
-        </div>
+        </div> -->
       </div>
       <div class="rightContainer"></div>
     </div>
