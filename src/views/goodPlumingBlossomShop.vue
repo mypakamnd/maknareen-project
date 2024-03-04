@@ -368,8 +368,7 @@ const shareToTwitter = () => {
 } */
 
 .shop-detail {
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh;
   padding: 30px 30px 0px 30px;
   display: flex;
   flex-direction: column;
