@@ -8,22 +8,19 @@ const nextPage = ref("page-first");
 const cards = ref([
   {
     name: "กุหลาบขาว",
-    image: "https://rosesyou.files.wordpress.com/2013/02/1.jpg",
+    image: "../../assets/5.png",
   },
   {
     name: "ดอกทิวลิป",
-    image:
-      "https://img.lazcdn.com/g/p/7f68e74e7b3253ff48e3ab9e22ce626a.jpg_720x720q80.jpg",
+    image: "../../assets/6.png",
   },
   {
     name: "ดอกทานตะวัน",
-    image:
-      "https://static.wixstatic.com/media/ddab77_6434a82151894a3787b9dd149f8235c9~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg",
+    image: "../../assets/7.png",
   },
   {
     name: "ดอกลิลลี่",
-    image:
-      "https://flowerlabbychanana.com/wp-content/uploads/2019/05/2018-10-24-12.25.18-1.jpg",
+    image: "../../assets/8.png",
   },
 ]);
 
@@ -38,6 +35,7 @@ const formatted_datetime = ref(
   new Date(newDate.value).toLocaleString("en-US", { timeZone: "Asia/Bangkok" })
 );
 const preview = ref(false);
+const showButton = ref(false);
 
 const TimeDate = ref(Timestamp.fromDate(new Date(newDate.value)));
 
@@ -120,22 +118,28 @@ const shareToTwitter = () => {
 
       <!-- page 2 question -->
       <transition>
-        <div class="question" v-if="nextPage === 'page-sec'">
-          <h3 class="question-text">
-            คุณต้องการมอบดอกไม้ให้คนพิเศษในวันพิเศษไหม?
-          </h3>
-          <button
-            class="outline-button-download"
-            @click="intoNextpage('page-third')"
-          >
-            เลือกช่อดอกไม้
-          </button>
-          <button
-            class="outline-button-back"
-            @click="intoNextpage('page-first')"
-          >
-            ไม่ล่ะ ขอบคุณ
-          </button>
+        <div
+          class="question"
+          v-if="nextPage === 'page-sec'"
+          @click="showButton = !showButton"
+        >
+          <img class="question-gif" src="../../assets/question.gif" alt="" />
+          <transition>
+            <div class="show-btn" v-if="showButton">
+              <button
+                class="outline-button-select"
+                @click="intoNextpage('page-third')"
+              >
+                เลือกช่อดอกไม้
+              </button>
+              <button
+                class="outline-button-back"
+                @click="intoNextpage('page-first')"
+              >
+                ไม่ล่ะ ขอบคุณ
+              </button>
+            </div>
+          </transition>
         </div>
       </transition>
       <!-- page 3 selected flower and input flower amount -->
@@ -178,7 +182,7 @@ const shareToTwitter = () => {
         <div class="writen-card" v-if="nextPage === 'page-fourth'">
           <label class="select-flower">เขียนการ์ดอวยพร</label>
           <textarea
-            maxlength="500"
+            maxlength="280"
             placeholder="Wish you..."
             class="message"
             v-model="wish"
@@ -249,6 +253,7 @@ const shareToTwitter = () => {
         </button>
         <Teleport to="body">
           <div class="modal" id="modal" ref="htmlContent">
+            <img class="pups" src="../../assets/pups.png" alt="" />
             <div class="recipe">
               <span class="recipe-shop-name">Goodpluming21ossom</span>
               <span class="recipe-shop-title">รายการคำสั่งซื้อของคุณ</span>
@@ -279,6 +284,7 @@ const shareToTwitter = () => {
                 >
               </div>
             </div>
+            <p class="credit">@NonMernCGN48 x @Maknareen</p>
           </div>
         </Teleport>
       </div>
@@ -297,7 +303,7 @@ const shareToTwitter = () => {
 .mobile-size {
   width: 460px;
   height: 100dvh;
-  background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
+  background-image: url("../../assets/shopBackground.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: aliceblue;
@@ -661,23 +667,50 @@ input:focus {
   font-family: "IBM Plex Sans Thai";
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+.outline-button-select {
+  background-color: transparent;
+  color: #ffffff;
+  background-color: #044560;
+  border: 2px solid #044560;
+  margin: 10px 0px;
+  padding: 10px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "IBM Plex Sans Thai";
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 #recipe {
   width: fit-content; /* ทำให้ div มีขนาดเท่ากับเนื้อหาภายใน */
   margin: auto; /* จัดตำแหน่ง div ตรงกลาง */
 }
 
 .modal {
-  background-image: url("../../assets/bbbbc.jpeg") !important;
+  background-image: url("../../assets/recipeBG.png") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
   width: 500px;
-  padding: 50px;
+  padding: 0px 50px 50px 50px;
   display: flex;
   position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.pups {
+  width: 200px;
+  display: inline;
+  position: relative;
+  top: 25px;
+}
+
+.credit {
+  font-size: 14px;
+  font-family: "IBM Plex Sans Thai";
+  opacity: 0.5;
+  margin-top: 10px;
 }
 
 .v-enter-active,
@@ -705,7 +738,21 @@ input:focus {
   font-size: 18px;
   text-align: center;
 }
+.question-gif {
+  width: 350px;
+  position: fixed;
+}
 
+.show-btn {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /* Mobile size */
 @media screen and (max-width: 480px) {
   .mobile-size {

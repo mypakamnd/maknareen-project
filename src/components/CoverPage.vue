@@ -59,13 +59,13 @@ import "boxicons";
             ></box-icon
           ></a>
         </div>
-        <!-- <div class="birthday-project">
-          <router-link to="/goodpluming21ossom"
-            ><button class="outline-button">
-              Goodpluming21ossom Project
-            </button></router-link
+        <div class="birthday-project">
+          <router-link to="/goodPlumingBlossomShop"
+            ><transition name="page-opacity" mode="out-in">
+              <button class="outline-button">Goodpluming21ossom Shop</button>
+            </transition></router-link
           >
-        </div> -->
+        </div>
       </div>
       <div class="rightContainer"></div>
     </div>
@@ -77,6 +77,16 @@ import "boxicons";
 
 /* Desktop size */
 @media only screen and (min-width: 1024px) {
+  .page-opacity-enter-active,
+  .page-opacity-leave-active {
+    transition: 600ms ease all;
+  }
+
+  .page-opacity-enter-from,
+  .page-opacity-leave-to {
+    opacity: 0;
+  }
+
   .birthday-project {
     display: flex;
     align-items: center;
@@ -238,6 +248,16 @@ import "boxicons";
 /* Ipad size */
 
 @media only screen and (max-width: 1024px) {
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.8s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
+
   .birthday-project {
     display: flex;
     align-items: center;
@@ -395,6 +415,15 @@ import "boxicons";
 /* mobile size */
 
 @media only screen and (max-width: 480px) {
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.8s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
+  }
   .scroll-down-btn {
     position: absolute;
     left: 50%;
