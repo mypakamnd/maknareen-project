@@ -367,7 +367,7 @@ const shareToTwitter = () => {
 } */
 
 .shop-detail {
-  height: 100vh;
+  height: 100svh;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -453,7 +453,7 @@ const shareToTwitter = () => {
 }
 
 .writen-card {
-  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -697,7 +697,8 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100svh;
+  padding: 30px;
 }
 
 .question-text {
