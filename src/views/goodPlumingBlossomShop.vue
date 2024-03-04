@@ -292,6 +292,7 @@ const shareToTwitter = () => {
   align-items: center;
   justify-content: center;
   height: 100svh;
+  overflow-y: scroll;
 }
 .mobile-size {
   width: 460px;
@@ -462,9 +463,6 @@ const shareToTwitter = () => {
 }
 
 .order-success {
-  background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 100%;
   display: flex;
   flex-direction: column;
