@@ -8,19 +8,23 @@ const nextPage = ref("page-first");
 const cards = ref([
   {
     name: "กุหลาบขาว",
-    image: "../../assets/5.png",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2F5.png?alt=media&token=b712f2cb-ea48-4b6d-936a-f7d809a6ed66",
   },
   {
     name: "ดอกทิวลิป",
-    image: "../../assets/6.png",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2F6.png?alt=media&token=d5c5ea7c-e52d-4648-a76f-8ed0276b4764",
   },
   {
     name: "ดอกทานตะวัน",
-    image: "../../assets/7.png",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2F7.png?alt=media&token=b9370428-3068-4244-9041-e9d3ef429214",
   },
   {
     name: "ดอกลิลลี่",
-    image: "../../assets/8.png",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/meencgm48website.appspot.com/o/images%2F8.png?alt=media&token=4c85fdc2-edcc-4366-8ce5-645f39852384",
   },
 ]);
 
