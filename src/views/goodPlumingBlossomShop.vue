@@ -57,6 +57,7 @@ const addCard = (index) => {
     wish: wish.value,
     sender_name: sender_name.value,
     date: TimeDate.value,
+    adminApprove: false,
   });
 };
 
@@ -91,76 +92,121 @@ const convertHtmlToImage = () => {
       console.error("An error occurred while converting HTML to image:", error);
     });
 };
+
+const shareToTwitter = () => {
+  // สร้าง URL สำหรับการแชร์ไปยัง Twitter
+  const hashtags = encodeURIComponent("GoodPluming21ossom,MeenCGM48");
+  const shareUrl = `https://twitter.com/intent/tweet?hashtags=${hashtags}`;
+
+  // เปิดหน้าต่างใหม่เพื่อแชร์ไปยัง Twitter
+  window.open(shareUrl, "_blank");
+};
 </script>
 
 <template>
   <div class="contianer">
+    <!-- desktop fixed mobile size -->
     <div class="mobile-size">
-      <div class="into-shop" v-if="nextPage === 'page-first'">
-        <span class="welcome-title">ยินดีต้อนรับเข้าสู่</span>
-        <span class="shop-name">Goodpluming21ossomShop</span>
-        <button class="outline-button" @click="intoNextpage('page-sec')">
-          เข้าสู่ร้านค้า
-        </button>
-      </div>
+      <!-- page 1 into shop -->
+      <transition>
+        <div class="into-shop" v-if="nextPage === 'page-first'">
+          <span class="welcome-title">ยินดีต้อนรับเข้าสู่</span>
+          <span class="shop-name">Goodpluming21ossomShop</span>
+          <button class="outline-button" @click="intoNextpage('page-sec')">
+            เข้าสู่ร้านค้า
+          </button>
+        </div>
+      </transition>
 
-      <div class="shop-detail" v-if="nextPage === 'page-sec'">
-        <span class="select-flower">เลือกดอกไม้</span>
-        <div class="card-container">
-          <div
-            v-for="(card, index) in cards"
-            :key="index"
-            class="card"
-            :class="{ selected: selectedCard === index }"
-            @click="selectCard(index)"
+      <!-- page 2 question -->
+      <transition>
+        <div class="question" v-if="nextPage === 'page-sec'">
+          <h3 class="question-text">
+            คุณต้องการมอบดอกไม้ให้คนพิเศษในวันพิเศษไหม?
+          </h3>
+          <button
+            class="outline-button-download"
+            @click="intoNextpage('page-third')"
           >
-            <img :src="card.image" alt="Card Image" class="flower-image" />
-            <span class="flower-name">
-              {{ card.name }}
-            </span>
+            เลือกช่อดอกไม้
+          </button>
+          <button
+            class="outline-button-back"
+            @click="intoNextpage('page-first')"
+          >
+            ไม่ล่ะ ขอบคุณ
+          </button>
+        </div>
+      </transition>
+      <!-- page 3 selected flower and input flower amount -->
+      <transition>
+        <div class="shop-detail" v-if="nextPage === 'page-third'">
+          <span class="select-flower">เลือกดอกไม้</span>
+          <div class="card-container">
+            <div
+              v-for="(card, index) in cards"
+              :key="index"
+              class="card"
+              :class="{ selected: selectedCard === index }"
+              @click="selectCard(index)"
+            >
+              <img :src="card.image" alt="Card Image" class="flower-image" />
+              <span class="flower-name">
+                {{ card.name }}
+              </span>
+            </div>
           </div>
-        </div>
-        <label class="flower-amount-label">จำนวนดอกไม้</label>
-        <input
-          class="flower-amount-input"
-          type="text"
-          v-model="flowerAmount"
-          placeholder="0"
-          style="text-align: center"
-        />
-        <button class="outline-button-card" @click="intoNextpage('page-third')">
-          เขียนการ์ดอวยพร
-        </button>
-      </div>
-
-      <div class="writen-card" v-if="nextPage === 'page-third'">
-        <label class="select-flower">เขียนการ์ดอวยพร</label>
-        <textarea
-          maxlength="500"
-          placeholder="Wish you..."
-          class="message"
-          v-model="wish"
-        ></textarea>
-        <div class="sender">
-          <label class="select-flower">ชื่อผู้ส่งมอบ</label>
+          <label class="flower-amount-label">จำนวนดอกไม้</label>
           <input
-            class="sender-name-input"
+            class="flower-amount-input"
             type="text"
-            v-model="sender_name"
-            placeholder="กรุณากรอกชื่อผู้ส่งมอบดอกไม้"
+            v-model="flowerAmount"
+            placeholder="0"
+            style="text-align: center"
           />
+          <button
+            class="outline-button-card"
+            @click="intoNextpage('page-fourth')"
+          >
+            เขียนการ์ดอวยพร
+          </button>
         </div>
-        <button
-          class="outline-button-send"
-          @click="addCard(selectedCard), intoNextpage('page-fourth')"
-        >
-          ส่งมอบดอกไม้
-        </button>
-        <button class="outline-button-back" @click="intoNextpage('page-sec')">
-          ย้อนกลับ
-        </button>
-      </div>
-      <div class="order-success" v-if="nextPage === 'page-fourth'">
+      </transition>
+
+      <!-- page 4 writen-card -->
+      <transition>
+        <div class="writen-card" v-if="nextPage === 'page-fourth'">
+          <label class="select-flower">เขียนการ์ดอวยพร</label>
+          <textarea
+            maxlength="500"
+            placeholder="Wish you..."
+            class="message"
+            v-model="wish"
+          ></textarea>
+          <div class="sender">
+            <label class="select-flower">ชื่อผู้ส่งมอบ</label>
+            <input
+              class="sender-name-input"
+              type="text"
+              v-model="sender_name"
+              placeholder="กรุณากรอกชื่อผู้ส่งมอบดอกไม้"
+            />
+          </div>
+          <button
+            class="outline-button-send"
+            @click="addCard(selectedCard), intoNextpage('page-fifth')"
+          >
+            ส่งมอบดอกไม้
+          </button>
+          <button
+            class="outline-button-back"
+            @click="intoNextpage('page-third')"
+          >
+            ย้อนกลับ
+          </button>
+        </div>
+      </transition>
+      <div class="order-success" v-if="nextPage === 'page-fifth'">
         <span class="order-complete">Order Complete!!</span>
         <div class="background-recipe">
           <div class="recipe" id="recipe">
@@ -198,8 +244,8 @@ const convertHtmlToImage = () => {
           ดาวน์โหลดใบเสร็จ
         </button>
 
-        <button class="outline-button-back" @click="preview = true">
-          แชร์ไปยัง X (twitter)
+        <button class="outline-button-share" @click="shareToTwitter()">
+          แชร์ไป Twitter
         </button>
         <Teleport to="body">
           <div class="modal" id="modal" ref="htmlContent">
@@ -245,22 +291,20 @@ const convertHtmlToImage = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100svh;
 }
 .mobile-size {
   width: 460px;
   height: 100svh;
-  /* background-image: url(../../assets/shop.png);
+  background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
   background-size: cover;
-  background-position: center; */
+  background-repeat: no-repeat;
   background-color: aliceblue;
 }
 
 .into-shop {
   transition: opacity 0.5s ease;
-  background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+  height: 100svh;
 }
 
 .welcome-title {
@@ -323,10 +367,6 @@ const convertHtmlToImage = () => {
 } */
 
 .shop-detail {
-  background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: unset;
   height: 100vh;
   padding: 30px;
   display: flex;
@@ -413,10 +453,6 @@ const convertHtmlToImage = () => {
 }
 
 .writen-card {
-  background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: end;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -488,6 +524,19 @@ input:focus {
   color: #044560;
   border: 2px solid #044560;
   margin-top: 10px;
+  padding: 10px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "IBM Plex Sans Thai";
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.outline-button-share {
+  width: 200px;
+  background-color: transparent;
+  color: #044560;
+  border: 2px solid #044560;
   padding: 10px 40px;
   font-size: 16px;
   cursor: pointer;
@@ -632,9 +681,35 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.8s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.question-text {
+  color: #044560;
+  font-family: "IBM Plex Sans Thai";
+  font-size: 18px;
+  text-align: center;
+}
+
 /* Mobile size */
 @media screen and (max-width: 480px) {
-  .mobile-size[data-v-32333d15] {
+  .mobile-size {
     width: 100%;
     height: 100svh;
   }
