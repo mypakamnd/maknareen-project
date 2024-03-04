@@ -198,8 +198,8 @@ const convertHtmlToImage = () => {
           ดาวน์โหลดใบเสร็จ
         </button>
 
-        <button class="outline-button-download" @click="preview = true">
-          แชร์ไปยัง X (Twitter)
+        <button class="outline-button-back" @click="preview = true">
+          แชร์ไปยัง X (twitter)
         </button>
         <Teleport to="body">
           <div class="modal" id="modal" ref="htmlContent">
@@ -327,7 +327,7 @@ const convertHtmlToImage = () => {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: unset;
-  height: 100%;
+  height: 100vh;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -417,7 +417,7 @@ const convertHtmlToImage = () => {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: end;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -624,19 +624,16 @@ input:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  /* position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 5%; */
   width: 500px;
   padding: 50px;
   display: flex;
+  position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 /* Mobile size */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .mobile-size[data-v-32333d15] {
     width: 100%;
     height: 100svh;
@@ -646,16 +643,26 @@ input:focus {
   }
 
   .card {
-    width: 160px;
-    height: 185px;
+    width: 150px;
+    height: 175px;
     margin: 5px;
   }
 
   .flower-image {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     border-radius: 8px;
+  }
+  .message {
+    width: 100%;
+  }
+
+  .sender {
+    width: 100%;
+  }
+  .sender-name-input {
+    width: 100%;
   }
 }
 </style>
