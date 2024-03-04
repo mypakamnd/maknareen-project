@@ -291,12 +291,12 @@ const shareToTwitter = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100svh;
+  height: 100dvh;
   overflow-y: scroll;
 }
 .mobile-size {
   width: 460px;
-  height: 100svh;
+  height: 100dvh;
   background-image: url("https://i.pinimg.com/564x/63/cf/27/63cf27526b599be197a53fbc1242d630.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -305,7 +305,7 @@ const shareToTwitter = () => {
 
 .into-shop {
   transition: opacity 0.5s ease;
-  height: 100svh;
+  height: 100dvh;
 }
 
 .welcome-title {
@@ -454,7 +454,7 @@ const shareToTwitter = () => {
 }
 
 .writen-card {
-  height: 100svh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -695,7 +695,7 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100svh;
+  height: 100dvh;
   padding: 30px;
 }
 
@@ -710,7 +710,7 @@ input:focus {
 @media screen and (max-width: 480px) {
   .mobile-size {
     width: 100%;
-    height: 100svh;
+    height: 100dvh;
   }
   .shop-detail {
     padding: 20px;
