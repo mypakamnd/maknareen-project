@@ -14,6 +14,8 @@ import index from "./components/Index.vue";
 import FlowerList from "./components/FlowerList.vue";
 import WriteMessage from "./components/WriteMessage.vue";
 import birthdayProject from "./views/birthdayProject.vue";
+import testCanvas from "./views/testCanvas.vue";
+import goodPlumingBlossomShop from "./views/goodPlumingBlossomShop.vue";
 
 // Import icon libraries
 import "@quasar/extras/material-icons/material-icons.css";
@@ -43,6 +45,8 @@ const router = createRouter({
     { path: "/FlowerList", component: FlowerList },
     { path: "/WriteMessage", component: WriteMessage },
     { path: "/goodpluming21ossom", component: birthdayProject },
+    { path: "/testCanvas", component: testCanvas },
+    { path: "/goodPlumingBlossomShop", component: goodPlumingBlossomShop },
   ],
 });
 
